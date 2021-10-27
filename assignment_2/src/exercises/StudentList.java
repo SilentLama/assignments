@@ -18,6 +18,7 @@ public class StudentList {
     private boolean containsId(final long studentId) {
         /**
          * Check whether a there is already a student with the same ID
+         * @param studentId the ID of the student to be checked
          * @return true if the student is already in the list, false if it is not in the list
          */
         for (int i = 0; i < this.studentList.size(); i++) {
@@ -31,7 +32,8 @@ public class StudentList {
     public boolean add(Student student) {
         /**
          * Checks if the student (studentId) is already in the list and adds it if the student is not yet in the list
-         *          * @return true if the student was added, false if the student is already in the list
+         * @param student the student that shall be added to the Studentlist
+         * @return true if the student was added, false if the student is already in the list
          */
         if (this.containsId(student.getStudentId())) {
             return false;
@@ -69,6 +71,9 @@ public class StudentList {
 
     public Student get(int pos) {
         /**
+         * Returns the student at a given index in the list.
+         * If the index is invalid (i.e less than zero or bigger than the list size) null is returned.
+         * @param pos the position of the student to be returned in the array
          * @return Returns the student at the given position. If the position is invalid null is returned
          */
         if (pos < 0 || pos >= this.studentList.size()) {
@@ -125,10 +130,19 @@ public class StudentList {
     }
 
     public ArrayList getStudents() {
+        /**
+         * @return returns the ArrayList holding the student objects
+         */
         return this.studentList;
     }
 
     private boolean swap(Student.SortKey key, Student s1, Student s2) {
+        /**
+         * Helper method to decide whether two students in the list should be swapped (bubblesort)
+         * @param key the enum to pick the correct attribute (field) of the student for comparison
+         * @param s1 the first student (the one with the lower index in the list)
+         * @param s2 the second student (the one with the higher index in the list)
+         */
         boolean swap = false;
         switch (key) {
             case FIRSTNAME: {
@@ -158,11 +172,11 @@ public class StudentList {
         return swap;
     }
 
-
     public void sort(Student.SortKey key) {
         /**
          * Sorts for the given key of the ENUM which corresponds to a Attribute (Field) of the Student.
          * Bubble sort is used for simplicity
+         * @param key the enum provided to set the search parameter
          */
         for (var i = 0; i < this.studentList.size(); i++) {
             for (int j = 0; j < this.studentList.size() - i - 1; j++) {
