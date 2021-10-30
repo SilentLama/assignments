@@ -136,6 +136,16 @@ public class StudentList {
         return this.studentList;
     }
 
+    @Override
+    public String toString() {
+        String result = new String();
+        for (Student student: this.studentList) {
+            String studentString = student.getFirstName() + " " + student.getLastName() + " " + student.getStudentId() + " " + student.getWeight() + " " + student.getBirthday() + " ";
+            result += studentString;
+        }
+        return result;
+    }
+
     private boolean swap(Student.SortKey key, Student s1, Student s2) {
         /**
          * Helper method to decide whether two students in the list should be swapped (bubblesort)
