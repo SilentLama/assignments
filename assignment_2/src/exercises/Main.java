@@ -2,6 +2,13 @@ package exercises;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * AG707
+ * Joel Murach (108020206298)
+ * Kog Wah Ng  (108020270759)
+ * Nicklas Osmers (108016232315)
+ */
+
 public class Main {
 
     public static void main(String[] args) {

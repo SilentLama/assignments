@@ -1,6 +1,13 @@
 package exercises;
 import java.util.ArrayList;
 
+/**
+ * AG707
+ * Joel Murach (108020206298)
+ * Kog Wah Ng  (108020270759)
+ * Nicklas Osmers (108016232315)
+ */
+
 public class StudentList {
 
     ArrayList<Student> studentList;
