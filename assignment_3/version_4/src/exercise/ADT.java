@@ -1,12 +1,5 @@
 package exercise;
 import java.util.Date;
-/*
-For implementing the fourth version you should use an ADT. This time you will have to implement
-a  functional  change  to  the  program.  It  now  has  to  include  two  (pseudo)  random  number  generators,
-which can be randomly seeded individually. Consequently, in each iteration of the program, two (pseudo)
-random numbers are to be printed.
- */
-
 
 public class ADT {
     private int max;
@@ -24,13 +17,17 @@ public class ADT {
     }
 
     public int random() {
+        /**
+         * Retrieve a random number
+         * @return random integer from zero to max
+         */
         this.actualRandom = (this.factor * this.actualRandom + this.increment) % this.max;
         return this.actualRandom;
     }
 
     public void randomSeed() {
         /**
-         * Modifies the static random variable by the current Date Modulo the max value
+         * Randomly seed the generator with the current date
          */
         long current_date =  new Date().getTime();
         actualRandom = (int) (current_date / 10) % max;
