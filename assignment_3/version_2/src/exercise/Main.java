@@ -7,6 +7,11 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
+        /**
+         * Initialize variables needed in scope which will act as globals in this case
+         * Get user input whether to seed random or keep standard
+         * print a random number and repeat until user types something else than "y"
+         */
         int max = 1000;
         int factor = 623;
         int increment = 525;
